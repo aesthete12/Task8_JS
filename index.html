@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Task 4</title>
+    
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form name="registrationForm" action="index.html" method="post" onsubmit="return validateForm()">
+            <label for="FirstName">First Name :</label>
+            <input type="text" name="FirstName" id="FirstName" required>
+            <label for="LastName">Last Name :</label>
+            <input type="text" name="LastName" id="LastName" required>
+            <label for="YourEmail">Your Email:</label>
+            <input type="email" name="YourEmail" id="YourEmail" required>
+            <label for="PassWord">Password :</label>
+            <input type="password" name="PassWord" id="PassWord" required>
+            <label for="RePassWord">Re Password :</label>
+            <input type="password" name="RePassWord" id="RePassWord" required>
+            <label for="gender">Gender :</label>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <label for="Age">Age :</label>
+            <input type="number" name="Age" id="Age">
+            <label for="Address">Address :</label>
+            <input type="text" name="Address" id="Address">
+            <label for="State">State :</label>
+            <input type="text" name="State" id="State">
+            <label for="Country">Country :</label>
+            <select name="Country" id="Country">
+                <option value="India">India</option>
+                <option value="Brazil">Brazil</option>
+                <option value="USA">USA</option>
+            </select>
+            <label for="LanguagesKnown">Languages Known :</label>
+            <input type="checkbox" id="lan1" name="LanguagesKnown" value="English">
+            <label for="lan1"> English</label>
+            <input type="checkbox" id="lan2" name="LanguagesKnown" value="Kannada">
+            <label for="lan2"> Kannada</label>
+            <input type="checkbox" id="lan3" name="LanguagesKnown" value="Hindi">
+            <label for="lan3"> Hindi</label>
+            <br> <br>
+            <div class="checkbox-label">
+                <input type="checkbox" id="lan4" name="Agreement" value="msg" required> <br>
+                <label for="lan4">Hereby I declare all the given details are true</label>
+            </div>
+            <p>Log in to <a href="#">Ethunus</a> website</p>
+            <button type="submit" name="Submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("PassWord").value;
+            var rePassword = document.getElementById("RePassWord").value;
+
+            if (password !== rePassword) {
+                alert("Passwords do not match. Please re-enter.");
+                return false;
+            }
+
+            var requiredFields = ["FirstName", "LastName", "YourEmail", "PassWord", "RePassWord", "gender", "Country"];
+
+            for (var i = 0; i < requiredFields.length; i++) {
+                var fieldName = requiredFields[i];
+                var fieldValue = document.getElementById(fieldName).value.trim();
+                if (fieldValue === "") {
+                    alert("Please fill in all required fields.");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

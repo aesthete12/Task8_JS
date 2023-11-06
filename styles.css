@@ -1,0 +1,72 @@
+body {
+    font-family: Cambria, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.form-container {
+    max-width: 600px; /* Increased width */
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #FF6B6B, #FFD166, #00B4D8, #48CAE4);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-container label {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px; /* Adjust the label width as needed */
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container select,
+.form-container input[type="number"] {
+    width: calc(100% - 120px); /* Adjust the input field width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+}
+
+.form-container .checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.form-container .checkbox-label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.form-container p {
+    padding-left: 50px;
+}
+
+.form-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #007acc;
+}
+
+.checkbox-label label {
+    white-space: nowrap; /* Prevent line breaks */
+}
